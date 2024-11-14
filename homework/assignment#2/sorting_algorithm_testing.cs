@@ -1,7 +1,7 @@
 /* CSC295 Week2 Assignment
  * Write your own collection of sorting programs to implement these algorithms: 
- * Bubble sort, Insertion Sort, Selection Sort, Merge Sort, and Quick Sort. Do you get the same 
- * relative timings as shown in Figure 7.20 (Page 260)? If not, why do you think this happened? 
+ * Bubble sort, Insertion Sort, Selection Sort, Merge Sort, and Quick Sort.
+ * Use the following code to compare the running times of various sorting algorithms.
  * How do your results compare with those of your classmates? 
  * What does this say about the difficulty of doing empirical timing studies?
  */
