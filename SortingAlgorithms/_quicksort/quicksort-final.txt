@@ -1,0 +1,242 @@
+11/19/24 correct Quicksort
+
+using System;
+class HelloWorld
+{
+    static void Main()
+    {
+        int[] arr = { 2, 5, 0, 9, 99, -99, 888, -7777};
+        QuickSort(arr, 0, arr.Length - 1);
+        foreach (var item in arr)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
+
+    public static void QuickSort(int[] arr, int left, int right)
+    {
+        // Returns to the calling method to stop recursion if there is only one element in the array
+        if (left == right) return;
+        
+        int temp; // a temporary variable used to swap two numbers
+                   // if there are only two elements and they are out of order, swap them
+        if (right - left == 1 && arr[left] > arr[right])
+        {
+            temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
+
+        // Indexes l and r are used to iterate over the numbers
+        // l starts from left and scans righward
+        // r starts from right and scans leftward
+        // p will be used to mark the index of pivot
+        int l = left, r = right - 1, p = right;
+
+        // Chooses the last number in arr as the pivot
+        int pivot = arr[right];
+
+        // The [left, right] segment of arr has three or more elements
+        // iterates index l first, then index r untill they overlap
+        while (r > l) 
+        {
+            // Advances l index untill the number is greater than the pivot
+            while (l < r && arr[l] < pivot)
+            {
+                l++;
+            }
+
+            // Advances the l index untill the number is less than the pivot
+            while (l < r && arr[r] > pivot)
+            {
+                r--;
+            }
+
+            // Swaps the two numbers if indexes l and r have not crossed each other
+            if (l != r)
+            {
+                temp = arr[l];
+                arr[l] = arr[r];
+                arr[r] = temp;
+            }
+
+        }
+
+        // Indexes l and r overalp, i.e., l == r
+        // Swaps the number with the pivot if the number is greater then the pivot
+        if (arr[l] > pivot)
+        {
+            temp = arr[l];
+            arr[l] = arr[right];
+            arr[right] = temp;
+            p = l; // Updates the index of pivot, otherwise p stays at index "right"
+        }
+
+        // Sorts the left half recursively if there are two or more elements
+        if (p - left >= 2)
+            QuickSort(arr, left, p - 1);
+
+        // Sorts the right half recursively if there are two or more elements
+        if (right - p >= 2)
+            QuickSort(arr, p + 1, right);
+    }
+
+}
+
+
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine("Hello World");
+    int[] arr = {2, 1, 0, 3};
+    QuickSort(arr, 0, arr.Length-1);
+    foreach (var item in arr){
+        Console.Write(item + " ");
+    }
+    Console.WriteLine();
+  }
+  
+   public static void QuickSort(int[] arr, int left, int right)
+        {
+            if (right > left) // continues to sort only if the array size is 2 or greater
+            {
+                // indexes l and r are used to iterate over the numbers from the left and right
+                // r starts from the second number to the last one, which is the pivot
+                // p is the index of pivot
+                int l = left, r = right - 1, p, temp;
+
+                // Chooses the last number in arr as the pivot
+                int pivot = arr[right];
+
+                while (l < r)
+                {
+                    // Advances l index untill the number is greater than the pivot
+                    while (l < r && arr[l] < pivot) 
+                    {
+                        l++;
+                    }
+
+                    // Advances the l index untill the number is less than the pivot
+                    while (l < r && arr[r] > pivot)
+                    {
+                        r--;
+                    }
+
+                    // Swapts the two numbers if indexes l and r have not crossed each other
+                    if (l != r) {
+                        temp = arr[l];
+                        arr[l] = arr[r];
+                        arr[r] = temp;
+                    } 
+                   
+                }
+                // two elements only, so l == r
+                if(arr[l]>pivot){
+                    temp = arr[l];
+                    arr[l] = arr[right];
+                    arr[right] = temp;
+                } else {
+                    temp = arr[l+1];
+                    arr[l+1] = arr[right];
+                    arr[right] = temp;
+                    
+                }
+                p = l; // Mark the index of pivot
+
+                QuickSort(arr, left, p - 1); // Sorts the left half of arr recursively
+                QuickSort(arr, p + 1, right); // Sorts the right half of arr recursively
+            }
+        }
+  
+}
+
+
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine("Hello World");
+    int[] arr = {2, 1, 5, 4, 0, -99};
+    QuickSort(arr, 0, arr.Length-1);
+    foreach (var item in arr){
+        Console.Write(item + " ");
+    }
+    Console.WriteLine();
+  }
+  
+   public static void QuickSort(int[] arr, int left, int right)
+        {
+            // return if there is only one element in the array
+            if(left == right) return;
+            int temp;
+            // if there are only two elements and they are out of order, swap them
+            if(right-left == 1 && arr[left] > arr[right]){
+                temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+            }
+            
+                // indexes l and r are used to iterate over the numbers
+                // l starts from index left and increases
+                // r starts from index right-1 and decreases
+                // p will be the index of pivot
+                int l = left, r = right - 1, p;
+
+                // Chooses the last number in arr as the pivot
+                int pivot = arr[right];
+
+                while (l < r) // there are two or more elements in addition to the pivot
+                {
+                    // Advances l index untill the number is greater than the pivot
+                    while (l < r && arr[l] < pivot) 
+                    {
+                        l++;
+                    }
+
+                    // Advances the l index untill the number is less than the pivot
+                    while (l < r && arr[r] > pivot)
+                    {
+                        r--;
+                    }
+
+                    // Swaps the two numbers if indexes l and r have not crossed each other
+                    if (l != r) {
+                        temp = arr[l];
+                        arr[l] = arr[r];
+                        arr[r] = temp;
+                    } 
+                   
+                }
+                // l == r
+                if(arr[l]>pivot){
+                    temp = arr[l];
+                    arr[l] = arr[right];
+                    arr[right] = temp;
+                
+                }
+                p = l; // Mark the index of pivot
+
+                if ( p - left > 2)
+                    QuickSort(arr, left, p - 1); // Sorts the left half of arr recursively
+                if ( right - p > 2)
+                    QuickSort(arr, p + 1, right); // Sorts the right half of arr recursively
+            }
+        
+  
+}
