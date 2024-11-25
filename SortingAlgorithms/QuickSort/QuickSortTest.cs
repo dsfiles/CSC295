@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        int[] arr1 = { 2, 1, 5, 4, 0, 3, -1 };
+       int[] arr1 = { 2, 1, 5, 4, 0, 3, -1 };
         int[] arr2 = { 2, 1, 5, 4, 0, 3, -1 };
         int[] arr3 = { 2, 1, 5, 4, 0, 3, -1 };
         Print(arr1, "Original array: ");
@@ -32,4 +32,4 @@
         }
         Console.WriteLine();
     }
-}
+} 

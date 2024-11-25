@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickSort", "SortingAlgorithms\QuickSort\QuickSort.csproj", "{65890459-C9B3-4BD7-8923-5CF8B9939C9F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MergeSort", "SortingAlgorithms\MergeSort\MergeSort.csproj", "{3C87A868-B3AC-4164-BA3C-7FF37FFFE4CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{65890459-C9B3-4BD7-8923-5CF8B9939C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65890459-C9B3-4BD7-8923-5CF8B9939C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65890459-C9B3-4BD7-8923-5CF8B9939C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C87A868-B3AC-4164-BA3C-7FF37FFFE4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C87A868-B3AC-4164-BA3C-7FF37FFFE4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C87A868-B3AC-4164-BA3C-7FF37FFFE4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C87A868-B3AC-4164-BA3C-7FF37FFFE4CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
