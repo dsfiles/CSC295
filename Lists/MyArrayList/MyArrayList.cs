@@ -1,9 +1,10 @@
 ﻿/*
+ * A simple implementation of ArrayList ADT - Verson 1.0
+ * Note that:
  * 1) Not all the methods are implemented
  * 2) Generic programming feature is not available
+ * Last update: 11/26/2024
  */
-
-using System;
 
 namespace MyArrayList
 {
@@ -15,7 +16,7 @@ namespace MyArrayList
             MyArrayList list = new MyArrayList();
             // check count and capacity
             Console.WriteLine("An empty list is crated, list count: " + list.Count);
-            //add to this list
+            //add to these numbers to the  list
             list.Add(3);
             Console.WriteLine($"After appending 3, Count: {list.Count}, Capacity: {list.Capacity}");
             list.Add(1);
@@ -28,16 +29,16 @@ namespace MyArrayList
             Console.WriteLine($"After appending 0, Count: {list.Count}, Capacity: {list.Capacity}");
             Console.WriteLine("Now the list is: ");
             list.DisplayList();
-            list.Sort();
+            list.Sort(); // sort the list using built-in QuickSort algorithm
             Console.WriteLine("After sorting:");
             list.DisplayList();
-            Console.WriteLine("Element at index 1: " + list[1]);
+            Console.WriteLine("Element at index 2: " + list[2]);
             list.Clear();
             Console.WriteLine($"After invoking Clear(), Count: {list.Count}, Capacity: {list.Capacity}");
         }
     }
 
-    class MyArrayList
+    internal class MyArrayList
     {
         int[] values; // ArrayList data are stored in an array called values
         public int Count { get; private set; }
@@ -46,12 +47,13 @@ namespace MyArrayList
             get { return values.Length; }
         }
 
-        public MyArrayList(int Capacity = 4) //constructor
+        public MyArrayList(int Capacity = 4) // constructor with default capacity of 4
         {
             values = new int[Capacity]; // allocate the array
             Count = 0; // initially, count is set to 0;
         }
 
+        // append a new element to the end of list
         public void Add(int newValue)
         {
             // check if array is full
@@ -64,7 +66,7 @@ namespace MyArrayList
             Count++;
         }
 
-        public void Resize()
+        private void Resize()
         {
             // create a new array of double capacity
             int[] tmp = new int[2 * Capacity];
@@ -80,7 +82,7 @@ namespace MyArrayList
         public void AddLast(int newValue)
         {
             Add(newValue); // Add method adds a new value to the end
-            // insert(newValue, Count)
+            // or try this: insert(newValue, Count)
         }
 
         public void AddFirst(int newValue)
@@ -88,6 +90,7 @@ namespace MyArrayList
             Insert(newValue, 0);
         }
 
+        // insert a new value at a given index
         public void Insert(int newValue, int index)
         {
             if (index < 0 || index > Count)
@@ -95,12 +98,12 @@ namespace MyArrayList
             // check if the array is full, double its capacity if needed
             if (Count == Capacity)
                 Resize();
-            // shift everything from position i to Count-1, right by one position
+            // shift everything from position i to Count-1, to the right by one position
             for (int i = Count; i > index; i--)
             {
                 values[i] = values[i - 1];
             }
-            //insert the new value
+            // insert the new value
             values[index] = newValue;
             Count++;
         }
@@ -109,7 +112,7 @@ namespace MyArrayList
         {
             if (Count == 0) //you CAN't delete last from an empty list
                 throw new IndexOutOfRangeException("You CAN't delete last from an empty list");
-            Count--; // just decrement the Count without removing
+            Count--; // just decrement the Count without removing it
         }
 
         public void DeleteFirst()
@@ -117,6 +120,7 @@ namespace MyArrayList
             Delete(0);
         }
 
+        // delete an element at a given index
         public void Delete(int index)
         {
             // validate index
@@ -138,7 +142,6 @@ namespace MyArrayList
             return Count == 0;
         }
 
-        // shift everything from position i to Count-1, right by one position
         public void DisplayList()
         {
             if (IsEmpty())
@@ -158,7 +161,8 @@ namespace MyArrayList
             throw new NotImplementedException();
         }
 
-        public int this[int i] // indexer
+        // indexer allows indexing like t[2] to work if t is an instance of ArrayList
+        public int this[int i] 
         {
             get { return values[i]; }
             set { values[i] = value; }
@@ -195,7 +199,7 @@ namespace MyArrayList
                 }
             }
             holder++;
-            //swapping
+            // swapping
             int tmp2 = arr[endIdx];
             arr[endIdx] = arr[holder];
             arr[holder] = tmp2;
