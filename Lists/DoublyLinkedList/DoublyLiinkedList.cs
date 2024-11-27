@@ -1,6 +1,6 @@
 ﻿/*************************************************************
  * Doubly Linked List Non-Generic Implementation - Version 1.0
- * Nov. 2024
+ * November 2024
  *************************************************************/
 
 using System;
@@ -11,8 +11,8 @@ namespace LinkedList
     {
         public Node Next;
         public Node Prev;
-        public Object Value;
-        public Node(Object obj)
+        public object Value;
+        public Node(object obj)
         {
             Value = obj;
             Next = null;
@@ -38,7 +38,7 @@ namespace LinkedList
             return Count == 0;
         }
 
-        public void AddStart(Object data)
+        public void AddStart(object data)
         {
             Node newNode = new Node(data);
             if (IsEmpty())
@@ -74,7 +74,7 @@ namespace LinkedList
             Count--;
         }
 
-        public void AddLast(Object data)
+        public void AddLast(object data)
         {
             Node newNode = new Node(data);
             if (IsEmpty())
@@ -112,7 +112,7 @@ namespace LinkedList
 
 
         // A new node is inserted after the 'current' node
-        public void InsertNode(Object data)
+        public void InsertNode(object data)
         {
             Node newNode = new Node(data);
             if (IsEmpty())
@@ -165,9 +165,9 @@ namespace LinkedList
                 Console.WriteLine("Tail ---");
             }
         }
-    }
+    } // END of class DoublyLinkedList
 
-    class DoublyLiinkedList
+    public class DoublyLinkedListTest
     {
         static void Main(string[] args)
         {
@@ -212,5 +212,5 @@ namespace LinkedList
             Console.WriteLine("curr node is " + testList.current.Value);
             Console.WriteLine("Final count of nodes is " + testList.Count);
         }
-    }
+    } // END of class DoublyLinkedListTest
 }
