@@ -1,8 +1,8 @@
 ﻿/*
  * A simple implementation of ArrayList ADT - Verson 1.0
- * Note that:
- * 1) Not all the methods are implemented
- * 2) Generic programming feature is not available
+ * 1) For simplicity, ArrayList stores integers only
+ * 2) Not all the methods are implemented
+ * 3) Generic programming feature is not available
  * Last update: 11/26/2024
  */
 
