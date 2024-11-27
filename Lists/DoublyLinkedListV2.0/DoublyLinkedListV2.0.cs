@@ -1,34 +1,31 @@
 ﻿/*************************************************************
- * Doubly Linked List - Version 1.0 Non-Generic Implementation
+ * Doubly Linked List - Version 2.0 Generic Implementation
  * November 2024
  *************************************************************/
 
-using System;
-
-namespace LinkedList
+namespace DoublyLinkedListGenericVersion
 {
-    public class Node
+    public class Node<T>
     {
-        public Node Next;
-        public Node Prev;
-        public object Value;
-        public Node(object obj)
+        public Node<T> Next;
+        public Node<T> Prev;
+        public T Value;
+        public Node(T data)
         {
-            Value = obj;
+            Value = data;
             Next = null;
             Prev = null;
         }
     }
 
-    public class DoublyLinkedList
+    public class DoublyLinkedList<T>
     {
-        public Node head;
-        public Node tail;
-        public Node current; // This will have latest node
+        public Node<T> head;
+        public Node<T> tail;
+        public Node<T> current; // This will have latest node
         public int Count;
         public DoublyLinkedList()
-        { 
-            // Empty list does not have node, all pointers are set to null
+        { // Empty list does not have node, all pointers are set to null
             head = tail = current = null;
             Count = 0;
         }
@@ -38,9 +35,9 @@ namespace LinkedList
             return Count == 0;
         }
 
-        public void AddStart(object data)
+        public void AddStart(T data)
         {
-            Node newNode = new Node(data);
+            Node<T> newNode = new Node<T>(data);
             if (IsEmpty())
             {
                 head = tail = current = newNode;
@@ -74,9 +71,9 @@ namespace LinkedList
             Count--;
         }
 
-        public void AddLast(object data)
+        public void AddLast(T data)
         {
-            Node newNode = new Node(data);
+            var newNode = new Node<T>(data);
             if (IsEmpty())
             {
                 head = tail = current = newNode;
@@ -110,11 +107,10 @@ namespace LinkedList
             Count--;
         }
 
-
         // A new node is inserted after the 'current' node
-        public void InsertNode(object data)
+        public void InsertNode(T data)
         {
-            Node newNode = new Node(data);
+            var newNode = new Node<T>(data);
             if (IsEmpty())
             {
                 head = tail = current = newNode;
@@ -144,7 +140,7 @@ namespace LinkedList
             else
             {
                 Console.Write("--- Head");
-                Node curr = head;
+                Node<T> curr = head;
                 while (curr != null) // Advance the pointer
                 {
                     if (curr == current)
@@ -165,24 +161,24 @@ namespace LinkedList
                 Console.WriteLine("Tail ---");
             }
         }
-    } // END of class DoublyLinkedList
+    }  // END of class DoublyLinkedList<T>
 
-    public class DoublyLinkedListTest
+    public class Program
     {
         static void Main(string[] args)
         {
-            DoublyLinkedList testList = new DoublyLinkedList();
+            var testList = new DoublyLinkedList<int>(); // testList can only store integers
             Console.WriteLine("Display the contents of a newly created list: ");
             testList.PrintList();
 
-            Console.WriteLine($"Append {789} to the list");
-            testList.AddLast(789);
+            Console.WriteLine($"Append 7 to the list");
+            testList.AddLast(7);
 
-            Console.WriteLine($"Append 'Bob' to the list");
-            testList.AddLast("Bob");
+            Console.WriteLine($"Append 8 to the list");
+            testList.AddLast(8);
 
-            Console.WriteLine($"Append 'John' to the list");
-            testList.AddLast("John");
+            Console.WriteLine($"Append 9 to the list");
+            testList.AddLast(9);
             Console.WriteLine("Display the whole list:");
             testList.PrintList();
 
@@ -194,7 +190,7 @@ namespace LinkedList
             testList.RemoveStart();
             testList.PrintList();
 
-            testList.AddStart("Abby");
+            testList.AddStart(2);
             Console.WriteLine($"Add {testList.current.Value} to the front of list");
             testList.PrintList();
 
@@ -212,5 +208,5 @@ namespace LinkedList
             Console.WriteLine("curr node is " + testList.current.Value);
             Console.WriteLine("Final count of nodes is " + testList.Count);
         }
-    } // END of class DoublyLinkedListTest
+    }
 }
