@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyArrayList", "Lists\MyArra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoublyLinkedListV1.0", "Lists\DoublyLinkedList\DoublyLinkedListV1.0.csproj", "{69FEE3D8-7661-468C-8A94-7CFB4F690456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoublyLinkedListV2.0", "Lists\DoublyLinkedListV2.0\DoublyLinkedListV2.0.csproj", "{93701206-46C7-46C4-ADFA-2C55C5356E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoublyLinkedListV2.0", "Lists\DoublyLinkedListV2.0\DoublyLinkedListV2.0.csproj", "{93701206-46C7-46C4-ADFA-2C55C5356E14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "List", "List", "{3FE596C3-C47C-4676-8453-F151B1F68CDA}"
 EndProject
@@ -20,6 +20,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoCode", "DemoCode", "{F5DB39BE-1765-4005-9312-9F398804C466}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildADoublyLinkedListManually", "DemoCode\BuildADoublyLinkedListManually\BuildADoublyLinkedListManually.csproj", "{CEB1E474-2B6C-4262-8D2F-A6FC21630E32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stack", "Stack", "{C7D48EE2-3BA1-4122-8DC4-4959FFDED8D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack01NonGeneric", "Stack\Stack1-NonGenericImplementation\Stack01NonGeneric.csproj", "{7140C131-3126-4FE0-932D-2105566E4FCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{CEB1E474-2B6C-4262-8D2F-A6FC21630E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB1E474-2B6C-4262-8D2F-A6FC21630E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB1E474-2B6C-4262-8D2F-A6FC21630E32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7140C131-3126-4FE0-932D-2105566E4FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7140C131-3126-4FE0-932D-2105566E4FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7140C131-3126-4FE0-932D-2105566E4FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7140C131-3126-4FE0-932D-2105566E4FCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{69FEE3D8-7661-468C-8A94-7CFB4F690456} = {3FE596C3-C47C-4676-8453-F151B1F68CDA}
 		{93701206-46C7-46C4-ADFA-2C55C5356E14} = {3FE596C3-C47C-4676-8453-F151B1F68CDA}
 		{CEB1E474-2B6C-4262-8D2F-A6FC21630E32} = {F5DB39BE-1765-4005-9312-9F398804C466}
+		{7140C131-3126-4FE0-932D-2105566E4FCC} = {C7D48EE2-3BA1-4122-8DC4-4959FFDED8D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D81CC89B-EE26-48AF-8D0C-8F93D2F4CA4F}
