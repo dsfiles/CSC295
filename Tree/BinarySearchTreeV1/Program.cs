@@ -14,6 +14,7 @@ public class Node
     public Node(int data)
     {
         Key = data;
+        Parent = Left = Right = null;
     }
 }
 
