@@ -11,8 +11,8 @@
     class Program
     {
         /*
-         * 1) your code here to describe the method below using a few sentences,
-         *    if possible, insert some comments as needed
+         * 1) your description here to describe the method below using a few sentences,
+         *    if possible, insert some comments
          */
         static bool CheckParenthesesA(string str)
         {
@@ -36,8 +36,8 @@
         } // end of CheckParenthesesA
 
         /*
-         * 2) your code here to describe the method below using a few sentences, 
-         *    if possible, insert some comments as needed
+         * 2) your description here to describe the method below using a few sentences, 
+         *    if possible, insert some comments
          */
         static int CheckParenthesesB(string str)
         {
@@ -72,7 +72,7 @@
 
         static void Main(string[] args)
         {
-            // 3) your code here to thoroughtly test the two methods:
+            // 3) your code below to thoroughtly test the two methods:
             //    CheckcheckParenthesesA and checkParenthesesB
         } // end of Main
     }
