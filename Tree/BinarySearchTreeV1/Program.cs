@@ -203,7 +203,7 @@ public class Program
 
         Console.WriteLine("\nDelete node 3:");
         bst.DeleteNode(bst._root, 3);
-        bst.DisplayTree();
+        bst.DisplayTree();  
         Console.WriteLine("\nInsert node 3:");
         bst.Insert(3);
         bst.DisplayTree();
