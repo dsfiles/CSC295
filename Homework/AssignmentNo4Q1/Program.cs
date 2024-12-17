@@ -1,5 +1,4 @@
-﻿namespace AssignmentNo4Q1
-{
+﻿namespace AssignmentNo4Q1 {
   /***********************************************************
   * CSC295 Assignment #4 
   * Question 1
@@ -12,7 +11,7 @@
     {
         /*
          * 1) your description here to describe the method below using a few sentences,
-         *    if possible, insert some comments
+         *    if possible, insert some comments where in the program you think appropriate
          */
         static bool CheckParenthesesA(string str)
         {
@@ -37,7 +36,7 @@
 
         /*
          * 2) your description here to describe the method below using a few sentences, 
-         *    if possible, insert some comments
+         *    if possible, insert some comments where in the program you think appropriate
          */
         static int CheckParenthesesB(string str)
         {
